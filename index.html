@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaStore — Cloud semplice e sicuro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        /* Navbar Dark */
+        nav {
+            background-color: #1e293b;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            max-width: 800px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 700px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 5%;
+            background-color: #1e293b;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background-color: #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+
+        .feature-card p {
+            color: #cbd5e1;
+        }
+
+        /* Storage Section */
+        .storage {
+            padding: 4rem 5%;
+            background-color: #0f172a;
+            text-align: center;
+        }
+
+        .storage-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .storage-bar {
+            height: 20px;
+            background-color: #334155;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .storage-fill {
+            height: 100%;
+            width: 35%;
+            background-color: #38bdf8;
+            border-radius: 10px;
+        }
+
+        /* Upload Section */
+        .upload {
+            padding: 4rem 5%;
+            background-color: #1e293b;
+            text-align: center;
+        }
+
+        .upload-box {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px dashed #38bdf8;
+            border-radius: 12px;
+            padding: 3rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-box:hover {
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        .upload-box i {
+            font-size: 3rem;
+            color: #38bdf8;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href=" " class="logo">NexaStore</a >
+        <div class="nav-links">
+            <a href="#funzioni">Vantaggi</a >
+            <a href="#spazio">Spazio</a >
+            <a href="#upload">Upload</a >
+            <a href="#prezzi">Piani</a >
+        </div>
+        <div class="nav-buttons">
+            <button class="btn btn-outline">Accedi</button>
+            <button class="btn btn-primary">Registrati</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Salva i tuoi file in modo semplice</h1>
+        <p>NexaStore è un cloud europeo facile da usare. Puoi salvare foto, video e documenti da qualsiasi telefono o computer.</p >
+        <div class="hero-buttons">
+            <button class="btn btn-primary">Inizia gratis</button>
+            <button class="btn btn-outline">Scopri di più</button>
+        </div>
+    </section>
+
+    <section class="features" id="funzioni">
+        <h2 class="section-title">Perché usare NexaStore?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Funziona con tutti i dispositivi</h3>
+                <p>Usa NexaStore su Android, Windows, iPhone o Mac. Non sei bloccato da un solo marchio.</p >
+            </div>
+            <div class="feature-card">
+                <h3>Carica file grandi</h3>
+                <p>Puoi inviare anche video o progetti molto grandi, fino a 50 GB per singolo file.</p >
+            </div>
+            <div class="feature-card">
+                <h3>Organizza come vuoi</h3>
+                <p>Crea cartelle per mettere in ordine foto, scuola, lavoro o video. Trovi tutto velocemente.</p >
+            </div>
+            <div class="feature-card">
+                <h3>I tuoi dati sono sicuri</h3>
+                <p>I file restano in Europa, seguendo le regole di privacy: nessuno li usa senza il tuo permesso.</p >
+            </div>
+            <div class="feature-card">
+                <h3>Prezzi chiari e bassi</h3>
+                <p>Paghi solo lo spazio che ti serve, senza costi nascosti o trucchi.</p >
+            </div>
+            <div class="feature-card">
+                <h3>Condividi facilmente</h3>
+                <p>Manda un link ai tuoi amici: loro aprono il file senza dover creare un account.</p >
+            </div>
+        </div>
+    </section>
+
+    <section class="storage" id="spazio">
+        <h2 class="section-title">Il tuo spazio disponibile</h2>
+        <div class="storage-container">
+            <p>Spazio totale: <strong>100 GB</strong></p >
+            <div class="storage-bar">
+                <div class="storage-fill"></div>
+            </div>
+            <p>Spazio usato: 35 GB | Spazio libero: 65 GB</p >
+            <button class="btn btn-primary" style="margin-top: 1rem;">Aggiungi più spazio</button>
+        </div>
+    </section>
+
+    <section class="upload" id="upload">
+        <h2 class="section-title">Carica i tuoi file qui</h2>
+        <div class="upload-box" id="uploadBox">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <h3>Clicca qui o trascina i file</h3>
+            <p>Accetta foto, video, PDF, file scolastici e tutti i formati comuni.</p >
+            <input type="file" id="fileInput" multiple hidden>
+        </div>
+    </section>
+
+    <footer>
+        <h3>NexaStore — Cloud semplice e sicuro</h3>
+        <div class="footer-links">
+            <a href="#">Regole d’uso</a >
+            <a href="#">Privacy</a >
+            <a href="#">Contatti</a >
+            <a href="#">Domande comuni</a >
+        </div>
+        <p>© 2026 NexaStore — Tutti i diritti riservati</p >
+    </footer>
+
+    <script>
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadBox.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (files.length > 0) {
+                alert(`Hai selezionato ${files.length} file!`);
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
