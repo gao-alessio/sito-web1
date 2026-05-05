@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vantaggi - NexaStore</title>
+<style>
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+}
+
+body {
+
+background-color: #0f172a;
+
+color: #f1f5f9;
+
+line-height: 1.6;
+
+}
+
+/* Navbar Dark */
+
+nav {
+
+background-color: #1e293b;
+
+box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+
+padding: 1rem 5%;
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+position: sticky;
+
+top: 0;
+
+z-index: 100;
+
+}
+
+.logo {
+
+font-size: 1.8rem;
+
+font-weight: 700;
+
+color: #38bdf8;
+
+text-decoration: none;
+
+}
+
+.nav-links {
+
+display: flex;
+
+gap: 2rem;
+
+}
+
+.nav-links a {
+
+text-decoration: none;
+
+color: #cbd5e1;
+
+font-weight: 500;
+
+transition: color 0.3s ease;
+
+}
+
+.nav-links a:hover {
+
+color: #38bdf8;
+
+}
+
+.btn {
+
+padding: 0.7rem 1.5rem;
+
+border-radius: 8px;
+
+border: none;
+
+cursor: pointer;
+
+font-weight: 600;
+
+transition: all 0.3s ease;
+
+}
+
+.btn-primary {
+
+background-color: #38bdf8;
+
+color: #0f172a;
+
+}
+
+.btn-primary:hover {
+
+background-color: #0ea5e9;
+
+}
+
+.btn-outline {
+
+background-color: transparent;
+
+color: #38bdf8;
+
+border: 2px solid #38bdf8;
+
+}
+
+.btn-outline:hover {
+
+background-color: rgba(56, 189, 248, 0.1);
+
+}
+
+/* Features Section */
+
+.features {
+
+padding: 4rem 5%;
+
+background-color: #1e293b;
+
+min-height: calc(100vh - 180px);
+
+}
+
+.section-title {
+
+text-align: center;
+
+font-size: 2.2rem;
+
+margin-bottom: 3rem;
+
+color: #ffffff;
+
+}
+
+/* 新增：图片容器样式 */
+
+.image-container {
+
+max-width: 1000px;
+
+margin: 0 auto 4rem auto;
+
+text-align: center;
+
+}
+
+.image-container img {
+
+width: 100%;
+
+height: auto;
+
+border-radius: 12px;
+
+box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+margin-bottom: 2rem;
+
+}
+
+.features-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+gap: 2rem;
+
+}
+
+.feature-card {
+
+padding: 2rem;
+
+border-radius: 12px;
+
+background-color: #334155;
+
+transition: transform 0.3s ease;
+
+}
+
+.feature-card:hover {
+
+transform: translateY(-5px);
+
+}
+
+.feature-card h3 {
+
+font-size: 1.5rem;
+
+margin-bottom: 1rem;
+
+color: #38bdf8;
+
+}
+
+.feature-card p {
+
+color: #cbd5e1;
+
+}
+
+/* Footer */
+
+footer {
+
+background-color: #0f172a;
+
+color: #94a3b8;
+
+padding: 3rem 5%;
+
+text-align: center;
+
+}
+
+.footer-links {
+
+display: flex;
+
+justify-content: center;
+
+gap: 2rem;
+
+margin: 2rem 0;
+
+}
+
+.footer-links a {
+
+color: #cbd5e1;
+
+text-decoration: none;
+
+}
+
+.footer-links a:hover {
+
+color: #38bdf8;
+
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+.nav-links {
+
+display: none;
+
+}
+
+.image-container img {
+
+border-radius: 8px;
+
+}
+
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav>
+<a href="index.html" class="logo">NexaStore</a>
+<div class="nav-links">
+<a href="funzioni.html">Vantaggi</a>
+<a href="spazio.html">Spazio</a>
+<a href="upload.html">Upload</a>
+<a href="#prezzi">Piani</a>
+</div>
+<div class="nav-buttons">
+<button class="btn btn-outline">Accedi</button>
+<button class="btn btn-primary">Registrati</button>
+</div>
+</nav>
+<section class="features">
+<h2 class="section-title">Perché usare NexaStore?</h2>
+<div class="features-grid">
+<div class="feature-card">
+<h3>Funziona con tutti i dispositivi</h3>
+<p>Usa NexaStore su Android, Windows, iPhone o Mac. Non sei bloccato da un solo marchio.</p>
+</div>
+<div class="feature-card">
+<h3>Carica file grandi</h3>
+<p>Puoi inviare anche video o progetti molto grandi, fino a 50 GB per singolo file.</p>
+</div>
+<div class="feature-card">
+<h3>Organizza come vuoi</h3>
+<p>Crea cartelle per mettere in ordine foto, scuola, lavoro o video. Trovi tutto velocemente.</p>
+</div>
+<div class="feature-card">
+<h3>I tuoi dati sono sicuri</h3>
+<p>I file restano in Europa, seguendo le regole di privacy: nessuno li usa senza il tuo permesso.</p>
+</div>
+<div class="feature-card">
+<h3>Prezzi chiari e bassi</h3>
+<p>Paghi solo lo spazio che ti serve, senza costi nascosti o trucchi.</p>
+</div>
+<div class="feature-card">
+<h3>Condividi facilmente</h3>
+<p>Manda un link ai tuoi amici: loro aprono il file senza dover creare un account.</p>
+</div>
+</div>
+</section>
+<footer>
+<h3>NexaStore — Cloud semplice e sicuro</h3>
+<div class="footer-links">
+<a href="#">Regole d’uso</a>
+<a href="#">Privacy</a>
+<a href="#">Contatti</a>
+<a href="#">Domande comuni</a>
+</div>
+<p>© 2026 NexaStore — Tutti i diritti riservati</p>
+</footer>
+</body>
+</html>
+ 
