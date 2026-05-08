@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexaStore — Cloud semplice e sicuro</title>
+<title>Prezzi — NexaStore</title>
 <style>
 * {
 margin: 0;
@@ -16,7 +16,6 @@ background-color: #0f172a;
 color: #f1f5f9;
 line-height: 1.6;
 }
-/* Navbar Dark */
 nav {
 background-color: #1e293b;
 box-shadow: 0 2px 15px rgba(0,0,0,0.3);
@@ -47,6 +46,10 @@ transition: color 0.3s ease;
 .nav-links a:hover {
 color: #38bdf8;
 }
+.nav-links a.active {
+color: #38bdf8;
+font-weight: 600;
+}
 .btn {
 padding: 0.7rem 1.5rem;
 border-radius: 8px;
@@ -70,53 +73,70 @@ border: 2px solid #38bdf8;
 .btn-outline:hover {
 background-color: rgba(56, 189, 248, 0.1);
 }
-/* Hero Section */
-.hero {
+/* Pricing Section */
+.pricing {
 padding: 5rem 5%;
-display: flex;
-flex-direction: column;
-align-items: center;
 text-align: center;
-gap: 2rem;
 }
-.hero h1 {
-font-size: 3rem;
-max-width: 800px;
-color: #ffffff;
+.pricing h1 {
+font-size: 2.8rem;
+margin-bottom: 1rem;
+color: #fff;
 }
-.hero p {
-font-size: 1.2rem;
+.pricing p.sub {
 color: #94a3b8;
 max-width: 700px;
+margin: 0 auto 3rem;
+font-size: 1.2rem;
 }
-.hero-buttons {
-display: flex;
-gap: 1rem;
-margin-top: 1rem;
-}
-/* Server Images Section */
-.server-images {
-padding: 4rem 5%;
-background-color: #1e293b;
-text-align: center;
-}
-.image-grid {
+.pricing-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 gap: 2rem;
-max-width: 1200px;
+max-width: 1100px;
 margin: 0 auto;
 }
-.server-img {
-width: 100%;
+.card {
+background-color: #1e293b;
 border-radius: 12px;
+padding: 2rem;
 box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 transition: transform 0.3s ease;
 }
-.server-img:hover {
+.card:hover {
 transform: translateY(-5px);
 }
-/* Footer */
+.card h3 {
+font-size: 1.5rem;
+margin-bottom: 0.5rem;
+color: #fff;
+}
+.price {
+font-size: 2.2rem;
+font-weight: 700;
+color: #38bdf8;
+margin: 1rem 0;
+}
+.price small {
+font-size: 1rem;
+color: #94a3b8;
+font-weight: 400;
+}
+.card ul {
+list-style: none;
+margin: 1.5rem 0;
+}
+.card ul li {
+padding: 0.5rem 0;
+color: #cbd5e1;
+}
+.card .btn {
+width: 100%;
+margin-top: 1rem;
+}
+.card.highlight {
+border: 2px solid #38bdf8;
+}
 footer {
 background-color: #0f172a;
 color: #94a3b8;
@@ -137,23 +157,12 @@ text-decoration: none;
 .footer-links a:hover {
 color: #38bdf8;
 }
-/* Responsive */
 @media (max-width: 768px) {
 .nav-links {
 display: none;
 }
-.hero h1 {
+.pricing h1 {
 font-size: 2rem;
-}
-.hero-buttons {
-flex-direction: column;
-width: 100%;
-}
-.btn {
-width: 100%;
-}
-.image-grid {
-grid-template-columns: 1fr;
 }
 }
 </style>
@@ -166,28 +175,57 @@ grid-template-columns: 1fr;
 <a href="funzioni.html">Vantaggi</a>
 <a href="spazio.html">Spazio</a>
 <a href="upload.html">Upload</a>
-<a href="#prezzi">Piani</a>
+<a href="prezzi.html" class="active">Prezzi</a>
 </div>
 <div class="nav-buttons">
 <button class="btn btn-outline">Accedi</button>
 <button class="btn btn-primary">Registrati</button>
 </div>
 </nav>
-<section class="hero">
-<h1>Salva i tuoi file in modo semplice</h1>
-<p>NexaStore è un cloud europeo facile da usare. Puoi salvare foto, video e documenti da qualsiasi telefono o computer.</p>
-<div class="hero-buttons">
-<button class="btn btn-primary">Inizia gratis</button>
-<button class="btn btn-outline">Scopri di più</button>
+
+<section class="pricing">
+<h1>Piani e Prezzi</h1>
+<p class="sub">Scegli lo spazio cloud adatto alle tue esigenze. Tutti i piani includono sicurezza europea e backup automatico.</p>
+
+<div class="pricing-grid">
+<div class="card">
+<h3>Gratis</h3>
+<div class="price">0€<small>/mese</small></div>
+<ul>
+<li>5 GB di spazio</li>
+<li>Accesso da qualsiasi dispositivo</li>
+<li>Backup base</li>
+</ul>
+<button class="btn btn-outline">Inizia gratis</button>
+</div>
+
+<div class="card highlight">
+<h3>Standard</h3>
+<div class="price">4,99€<small>/mese</small></div>
+<ul>
+<li>200 GB di spazio</li>
+<li>Sincronizzazione automatica</li>
+<li>Backup giornaliero</li>
+<li>Supporto prioritario</li>
+</ul>
+<button class="btn btn-primary">Scegli Standard</button>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<div class="price">9,99€<small>/mese</small></div>
+<ul>
+<li>1 TB di spazio</li>
+<li>Condivisione file illimitata</li>
+<li>Backup continuo</li>
+<li>Crittografia avanzata</li>
+<li>Supporto 24/7</li>
+</ul>
+<button class="btn btn-outline">Scegli Premium</button>
+</div>
 </div>
 </section>
-<!-- 服务器图片区域（无标题） -->
-<section class="server-images">
-<div class="image-grid">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Server Room 1" class="server-img">
-<img src="https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Server Room 2" class="server-img">
-</div>
-</section>
+
 <footer>
 <h3>NexaStore — Cloud semplice e sicuro</h3>
 <div class="footer-links">
