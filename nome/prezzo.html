@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Piani e Prezzi — NexaStore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
+body{background-color:#0f172a;color:#f1f5f9;line-height:1.6}
+nav{background-color:#1e293b;box-shadow:0 2px 15px rgba(0,0,0,0.3);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-size:1.8rem;font-weight:700;color:#38bdf8;text-decoration:none}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{text-decoration:none;color:#cbd5e1;font-weight:500;transition:color .3s ease}
+.nav-links a:hover{color:#38bdf8}
+.btn{padding:.7rem 1.5rem;border-radius:8px;border:none;cursor:pointer;font-weight:600;transition:all .3s ease}
+.btn-primary{background-color:#38bdf8;color:#0f172a}
+.btn-primary:hover{background-color:#0ea5e9}
+.btn-outline{background-color:transparent;color:#38bdf8;border:2px solid #38bdf8}
+.btn-outline:hover{background-color:rgba(56,189,248,.1)}
+.pricing-section{padding:5rem 5%;text-align:center}
+.section-title{font-size:2.5rem;margin-bottom:1rem;color:#fff}
+.section-subtitle{font-size:1.2rem;color:#94a3b8;max-width:700px;margin:0 auto 3rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.pricing-card{background-color:#1e293b;border-radius:12px;padding:2.5rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:transform .3s ease;position:relative}
+.pricing-card:hover{transform:translateY(-5px)}
+.pricing-card.featured{border:2px solid #38bdf8;transform:scale(1.03)}
+.pricing-card.featured .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background-color:#38bdf8;color:#0f172a;padding:.3rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600}
+.plan-name{font-size:1.5rem;font-weight:700;margin-bottom:1rem;color:#fff}
+.plan-price{font-size:3rem;font-weight:700;color:#38bdf8;margin-bottom:.5rem}
+.plan-period{color:#94a3b8;margin-bottom:2rem}
+.plan-features{list-style:none;margin-bottom:2rem}
+.plan-features li{padding:.8rem 0;border-bottom:1px solid #334155;color:#cbd5e1}
+.plan-features li:last-child{border-bottom:none}
+footer{background-color:#0f172a;color:#94a3b8;padding:3rem 5%;text-align:center;margin-top:4rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin:2rem 0}
+.footer-links a{color:#cbd5e1;text-decoration:none}
+.footer-links a:hover{color:#38bdf8}
+@media (max-width:768px){
+.nav-links{display:none}
+.section-title{font-size:2rem}
+.pricing-card.featured{transform:scale(1)}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav>
+<a href="index.html" class="logo">NexaStore</a>
+<div class="nav-links">
+<a href="funzioni.html">Vantaggi</a>
+<a href="spazio.html">Spazio</a>
+<a href="upload.html">Upload</a>
+<a href="prezzi.html">Piani</a>
+</div>
+<div class="nav-buttons">
+<button class="btn btn-outline">Accedi</button>
+<button class="btn btn-primary">Registrati</button>
+</div>
+</nav>
+<section class="pricing-section">
+<h2 class="section-title">Scegli il piano giusto per te</h2>
+<p class="section-subtitle">Tutti i piani includono sicurezza europea,backup automatico e accesso da qualsiasi dispositivo.</p>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3 class="plan-name">Gratuito</h3>
+<div class="plan-price">€0</div>
+<p class="plan-period">/mese</p>
+<ul class="plan-features">
+<li>5 GB di spazio</li>
+<li>Accesso base ai file</li>
+<li>Supporto email</li>
+<li>1 dispositivo connesso</li>
+</ul>
+<button class="btn btn-outline">Inizia gratis</button>
+</div>
+<div class="pricing-card featured">
+<div class="badge">Consigliato</div>
+<h3 class="plan-name">Standard</h3>
+<div class="plan-price">€4,99</div>
+<p class="plan-period">/mese</p>
+<ul class="plan-features">
+<li>100 GB di spazio</li>
+<li>Condivisione file illimitata</li>
+<li>Supporto prioritario</li>
+<li>5 dispositivi connessi</li>
+<li>Crittografia avanzata</li>
+</ul>
+<button class="btn btn-primary">Scegli piano</button>
+</div>
+<div class="pricing-card">
+<h3 class="plan-name">Pro</h3>
+<div class="plan-price">€9,99</div>
+<p class="plan-period">/mese</p>
+<ul class="plan-features">
+<li>1 TB di spazio</li>
+<li>Collaborazione team</li>
+<li>Supporto 24/7</li>
+<li>Dispositivi illimitati</li>
+<li>Backup giornaliero</li>
+<li>Accesso API</li>
+</ul>
+<button class="btn btn-outline">Scegli piano</button>
+</div>
+</div>
+</section>
+<footer>
+<h3>NexaStore — Cloud semplice e sicuro</h3>
+<div class="footer-links">
+<a href="#">Regole d’uso</a>
+<a href="#">Privacy</a>
+<a href="#">Contatti</a>
+<a href="#">Domande comuni</a>
+</div>
+<p>© 2026 NexaStore — Tutti i diritti riservati</p>
+</footer>
+</body>
+</html>

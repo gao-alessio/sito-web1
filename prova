@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carica File - NexaStore</title>
+<title>NexaStore — Cloud semplice e sicuro</title>
 <style>
 * {
 margin: 0;
@@ -71,35 +71,53 @@ border: 2px solid #38bdf8;
 .btn-outline:hover {
 background-color: rgba(56, 189, 248, 0.1);
 }
-/* Upload Section */
-.upload {
+/* Hero Section */
+.hero {
+padding: 5rem 5%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 2rem;
+}
+.hero h1 {
+font-size: 3rem;
+max-width: 800px;
+color: #ffffff;
+}
+.hero p {
+font-size: 1.2rem;
+color: #94a3b8;
+max-width: 700px;
+}
+.hero-buttons {
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+}
+/* Server Images Section */
+.server-images {
 padding: 4rem 5%;
 background-color: #1e293b;
 text-align: center;
-min-height: calc(100vh - 180px);
 }
-.section-title {
-text-align: center;
-font-size: 2.2rem;
-margin-bottom: 3rem;
-color: #ffffff;
-}
-.upload-box {
-max-width: 600px;
+.image-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+gap: 2rem;
+max-width: 1200px;
 margin: 0 auto;
-border: 2px dashed #38bdf8;
+}
+.server-img {
+width: 100%;
+height: 300px;
+object-fit: cover;
 border-radius: 12px;
-padding: 3rem;
-cursor: pointer;
-transition: background-color 0.3s ease;
+box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+transition: transform 0.3s ease;
 }
-.upload-box:hover {
-background-color: rgba(56, 189, 248, 0.05);
-}
-.upload-box i {
-font-size: 3rem;
-color: #38bdf8;
-margin-bottom: 1rem;
+.server-img:hover {
+transform: translateY(-5px);
 }
 /* Footer */
 footer {
@@ -107,6 +125,7 @@ background-color: #0f172a;
 color: #94a3b8;
 padding: 3rem 5%;
 text-align: center;
+margin-top: 4rem;
 }
 .footer-links {
 display: flex;
@@ -126,6 +145,22 @@ color: #38bdf8;
 .nav-links {
 display: none;
 }
+.hero h1 {
+font-size: 2rem;
+}
+.hero-buttons {
+flex-direction: column;
+width: 100%;
+}
+.btn {
+width: 100%;
+}
+.image-grid {
+grid-template-columns: 1fr;
+}
+.server-img {
+height: 220px;
+}
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -137,28 +172,28 @@ display: none;
 <a href="funzioni.html">Vantaggi</a>
 <a href="spazio.html">Spazio</a>
 <a href="upload.html">Upload</a>
-<a href="#prezzi">Piani</a>
+<a href="#prezzo">prezzo</a>
 </div>
 <div class="nav-buttons">
 <button class="btn btn-outline">Accedi</button>
 <button class="btn btn-primary">Registrati</button>
 </div>
 </nav>
-<section class="upload">
-<h2 class="section-title">Carica i tuoi file qui</h2>
-<div class="upload-box" id="uploadBox">
-<i class="fas fa-cloud-upload-alt"></i>
-<h3>Clicca qui o trascina i file</h3>
-<p>Accetta foto, video, PDF, file scolastici e tutti i formati comuni.</p>
-<input type="file" id="fileInput" multiple hidden>
+<section class="hero">
+<h1>Salva i tuoi file in modo semplice</h1>
+<p>NexaStore è un cloud europeo facile da usare. Puoi salvare foto, video e documenti da qualsiasi telefono o computer.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary">Inizia gratis</button>
+<button class="btn btn-outline">Scopri di più</button>
 </div>
 </section>
-<footer>
-    <div class="container">
-<h1>Carica i tuoi File sul Cloud</h1>
-<p class="desc-text">Carica foto e file sul cloud: non occupano memoria sul telefono, e anche se rompi o perdi il cellulare, i tuoi dati restano salvati online e li puoi recuperare quando vuoi.</p>
-<p style="color:#94a3b8;margin-top:1rem;">Carica documenti, foto, video e tutti i tuoi file in totale sicurezza.</p>
+<!-- 服务器图片区域（无标题，两张图尺寸完全一致） -->
+<section class="server-images">
+<div class="image-grid">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Server Room 1" class="server-img">
+<img src="https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Server Room 2" class="server-img">
 </div>
+</section>
 <footer>
 <h3>NexaStore — Cloud semplice e sicuro</h3>
 <div class="footer-links">
@@ -169,19 +204,6 @@ display: none;
 </div>
 <p>© 2026 NexaStore — Tutti i diritti riservati</p>
 </footer>
-<script>
-const uploadBox = document.getElementById('uploadBox');
-const fileInput = document.getElementById('fileInput');
-uploadBox.addEventListener('click', () => {
-fileInput.click();
-});
-fileInput.addEventListener('change', (e) => {
-const files = e.target.files;
-if (files.length > 0) {
-alert(`Hai selezionato ${files.length} file!`);
-}
-});
-</script>
 </body>
 </html>
 
